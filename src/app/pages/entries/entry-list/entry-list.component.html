@@ -1,9 +1,7 @@
-<nav class="mb-5">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-    <li class="breadcrumb-item active">Lançamentos</li>
-  </ol>
-</nav>
+<app-bread-crumb
+  [items]="[{text: 'Lançamentos'}]"
+>
+</app-bread-crumb>
 
 <div class="row mb-4">
   <div class="col-md">
@@ -24,7 +22,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let entry of entries">
+    <tr *ngFor="let entry of resources">
       <td>
         <strong>{{ entry.name }}</strong>
         <br>
@@ -44,7 +42,7 @@
       </td>
       <td class="text-center">
         <a [routerLink]="[entry.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
-        <button (click)="deleteEntry(entry)" class="btn btn-outline-danger btn-sm">Excluir</button>
+        <button (click)="deleteResource(entry)" class="btn btn-outline-danger btn-sm">Excluir</button>
       </td>
     </tr>
   </tbody>
